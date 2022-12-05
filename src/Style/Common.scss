@@ -1,0 +1,123 @@
+@import "./Variable.scss";
+@import 'node_modules/aos/src/sass/aos.scss';
+$aos-distance: 20px; 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+.container {
+  max-width: 1239px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 16px;
+}
+/* Poppins-SemiBold 600 */
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url(../Assets/Fonts/Poppins-SemiBold.ttf);
+}
+
+/* BernhardGothicURW-Medium 500 */
+@font-face {
+  font-family: "BernhardGothicURW-Medium";
+  src: url(../Assets/Fonts/BernhardGothicURW-Medium.ttf);
+}
+
+/* BernhardGothicURW-Medium 800 */
+@font-face {
+  font-family: "BernhardGothicURW-Heavy";
+  src: url(../Assets/Fonts/BernhardGothicURW-Heavy.ttf);
+}
+
+/* Caveat-Bold 700 */
+@font-face {
+  font-family: "Caveat-Bold";
+  src: url(../Assets/Fonts/Caveat-Bold.ttf);
+}
+
+a {
+  text-decoration: none;
+}
+
+.background{
+    overflow: hidden;
+    background-image: url(../Assets/Images/Background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}   
+
+h2 {
+  font-family: $Bern-800;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 53px;
+  color: $secondary-color;
+
+  @include md {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  @include sm {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+h3 {
+  font-family: $Bern-800;
+  font-weight: 800;
+  font-size: 27px;
+  line-height: 32px;
+  color: $white;
+  @include md {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  @include sm {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+h4 {
+  font-family: $Bern-800;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 22px;
+  color: $secondary-color;
+  @include md {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+[data-aos=fade-down] {
+  opacity: 0;
+  transition-property: transform, opacity;
+  
+
+  &.aos-animate {
+    opacity: 1;
+    
+  }
+
+  @media (max-width: 1440px) {
+    transform: translateX(0px);
+
+    &.aos-animate {
+      transform: translateX(25px);
+    }
+  }
+}
+
+
+
+  // h4.footer-form__heading.aos-init.aos-animate {
+  //     transform: translateZ(10px);
+  // }

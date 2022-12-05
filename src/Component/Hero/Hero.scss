@@ -1,0 +1,294 @@
+@import "../../Style/Style.scss";
+
+.hero-part {
+  padding-top: 68.55px;
+  @include lg {
+    padding-top: 0px;
+  }
+  .hero-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 72.24px;
+    position: relative;
+    @include xml {
+      flex-direction: column;
+    }
+    @include lg {
+      gap: 50px;
+      padding-bottom: 50px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background: url(../../Assets/Images/Airplane.svg) no-repeat;
+      height: 72px;
+      width: 75px;
+      bottom: 0;
+      left: 36%;
+      animation: airplane 5s infinite;
+      @keyframes airplane {
+        0% {
+          bottom: 0px;
+        }
+        50% {
+          bottom: 50px;
+        }
+
+        100% {
+          bottom: 0px;
+        }
+      }
+    }
+    .hero-left {
+      padding-left: 20px;
+      @include sm {
+        padding-left: 0;
+      }
+      .hero-background {
+        background: $img-bg;
+        border-radius: 20px;
+
+        width: 436.55px;
+        height: 436.55px;
+        z-index: 2;
+        position: relative;
+        transition: all 2s ease-in-out 100ms;
+        animation: dots 2s ease-in-out infinite alternate;
+        @include md {
+          animation: none;
+        }
+        @include sm {
+          width: 100%;
+          height: 100%;
+          transform: none;
+        }
+        &:hover {
+          animation-play-state: paused;
+          @include md {
+            animation: none;
+          }
+          @keyframes dots {
+            0% {
+              transform: matrix(1, -0.1, 0.1, 1, 0, 0);
+            }
+            100% {
+              transform: matrix(1, -0.2, 0.2, 1, 1, 0);
+            }
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          background: url(../../Assets/Images/Hero_flower.png) no-repeat;
+          width: 121px;
+          height: 303.55px;
+          right: 35px;
+          bottom: 0%;
+          animation: flower 2s linear infinite alternate;
+          @include sm {
+            display: none;
+          }
+          @keyframes flower {
+            0% {
+              transform: rotate(5deg);
+            }
+          }
+        }
+        .hero-img {
+          max-width: 439.92px;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          @include xml {
+            max-width: 100%;
+          }
+          .hero_image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+    .hero-right {
+      margin-top: 33.52px;
+      @include lg {
+        margin-top: 15px;
+      }
+      .hero-content {
+        border-bottom: 1px solid rgba(138, 201, 38, 0.15);
+        min-width: 638px;
+        left: 0;
+        right: 0;
+        width: 100%;
+
+        @include md {
+          min-width: 100%;
+        }
+
+        .hero-date {
+          @include heading_text;
+          margin-bottom: 10px;
+          @include sm {
+            text-align: center;
+          }
+        }
+        .hero-heading {
+          margin-bottom: 20px;
+          max-width: 460px;
+
+          @include xml {
+            max-width: 100%;
+          }
+          @include md {
+            margin-bottom: 10px;
+          }
+          @include sm {
+            text-align: center;
+            max-width: 100%;
+          }
+        }
+        .hero-btn {
+          margin-bottom: 40px;
+          @include md {
+            margin-bottom: 20px;
+          }
+          @include sm {
+            text-align: center;
+          }
+        }
+      }
+      .hero-content_bottom {
+        .content-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 40px;
+          @include md {
+            padding-top: 20px;
+          }
+          @include sm {
+            flex-direction: column;
+            gap: 20px;
+          }
+          .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .box-icon {
+              padding-bottom: 20px;
+              cursor: pointer;
+              &:hover {
+                animation-play-state: running;
+                .green {
+                  animation: greenpart 5s infinite;
+                  @keyframes greenpart {
+                    0% {
+                      transform-origin: top left;
+                      transform: rotate(0deg);
+                    }
+                    100% {
+                      transform-origin: top left;
+                      transform: rotate(45deg);
+                      opacity: 0;
+                    }
+                  }
+                }
+              }
+                &:hover {
+                  animation-play-state: running;
+                  .blackicon {
+                    animation: blackpart 5s infinite;
+                    @keyframes blackpart {
+                      0%,
+                      25%,
+                      29% {
+                        transform: scaleY(1.2);
+                        opacity: 0.8;
+                      }
+
+                      3%,
+                      30%,
+                      35%,
+                      42% {
+                        transform: scaleY(1);
+                        opacity: 1;
+                      }
+                    }
+                  }
+                }
+                &:hover{
+                  animation-play-state: running;
+                  .star {
+                    animation: Starpart 5s infinite;
+                    position: relative;
+                    @keyframes Starpart {
+                      0% {
+                        opacity: 0.8;
+                      }
+                      100% {
+                        opacity: 0;
+                      }
+                    }
+                  }
+                }
+              .trophypart {
+                animation: trophyblack 5s infinite;
+                position: relative;
+                @keyframes trophyblack {
+                  0% {
+                    transform: rotate(0deg);
+                  }
+                  25% {
+                    transform: rotate(2deg);
+                  }
+                  50% {
+                    transform: rotate(4deg);
+                  }
+                  100% {
+                    transform: rotate(0deg);
+                  }
+                }
+              }
+            }
+            .p-text {
+              @include p_text;
+              color: $secondary-color;
+              text-align: center;
+            }
+          }
+        }
+        .line {
+          display: flex;
+          justify-content: flex-end;
+          gap: 20.44px;
+          margin-right: 39px;
+          @include sm {
+            margin-right: 0;
+          }
+          .lineimage {
+            .greenline {
+              stroke-dasharray: 2300;
+              stroke-dashoffset: 2300;
+              animation: dash 5s infinite forwards;
+              @keyframes dash {
+                from {
+                  stroke-dashoffset: 0;
+                }
+              }
+            }
+          }
+          .linetext {
+            .line_texts {
+              @include blue_text;
+              margin-top: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

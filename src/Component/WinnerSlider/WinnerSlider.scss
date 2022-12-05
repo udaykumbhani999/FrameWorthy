@@ -1,0 +1,68 @@
+@import "../../Style/Style.scss";
+
+
+.Sliderpart{
+    .slider-box{
+        .slider-image{
+            max-width: 1028.26px;
+            border: none;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; 
+            border-radius: 20px;
+            transform: matrix(1, 0.01, -0.01, 1, 0, 0);
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                overflow: hidden;
+            }
+        }
+    }
+    .slick-slider{
+        .slick-next{
+            background: url(../../Assets/Images/Rightaerrow.svg) no-repeat center;
+            position: absolute;
+            z-index: 1;
+            width: 31px;
+            height: 25px;
+            top: 93%;
+            right: 27px;
+            @include lg{
+                left: 95%;
+            }
+            @include md{
+                left: 94%;
+            }
+            
+        }
+        .slick-prev{
+            background: url(../../Assets/Images/Leftaerrow.svg) no-repeat center;
+            position: absolute;
+            z-index: 1;
+            width: 31px;
+            height: 25px;
+            top: 93%;
+            left: 90%;
+            @include lg{
+                left: 90%;
+            }
+            @include md{
+                left: 88%;
+            }
+           
+        }
+        .slick-next:before,.slick-prev:before {
+            font-size: 0px;
+            opacity: 0;
+        }
+        .slick-disabled {
+            display: none !important;
+        }
+        .slick-list {
+            max-width: 1028.26px;
+        }
+    }
+
+}

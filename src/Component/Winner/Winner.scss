@@ -1,0 +1,272 @@
+@import "../../Style/Style.scss";
+
+.winnerpart {
+  padding-bottom: 50px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(../../Assets/Images/Ellipse.svg) no-repeat;
+    height: 330.77px;
+    width: 100%;
+    max-width: 335px;
+    top: -25%;
+    left: 5px;
+    z-index: 10;
+    @include xmd {
+      display: none;
+    }
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    background: url(../../Assets/Images/Winnerflower.svg) no-repeat right top;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+  }
+  .winner-top {
+    .p-text {
+      @include heading_text;
+      margin-bottom: 10px;
+      text-align: center;
+      @include xmd {
+        margin-bottom: 5px;
+      }
+    }
+    .winner-heading {
+      margin-bottom: 33.6px;
+      text-align: center;
+      @include xmd {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .Winner-bottom {
+    margin-top: 22.17px;
+    @include xmd {
+      margin-top: 15px;
+    }
+
+    .wrapp {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        background: url(../../Assets/Images/Dotsfirst.png) no-repeat;
+        height: 442.45px;
+        width: 485.08px;
+        right: 0px;
+        top: -22.17px;
+        z-index: -1;
+        @include md {
+          height: 300px;
+          width: 300px;
+        }
+        @include sm {
+          display: none;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        background: url(../../Assets/Images/Dotsfirst.png) no-repeat;
+        height: 442.45px;
+        width: 485.08px;
+        left: 0px;
+        bottom: -65.68px;
+        z-index: -1;
+        @include md {
+          height: 300px;
+          width: 300px;
+        }
+        @include sm {
+          display: none;
+        }
+      }
+      .winner-wrapper {
+        background-color: $img-bg;
+        border-radius: 20px;
+        border: none;
+        transform: matrix(1, 0.01, -0.01, 1, 0, 0);
+        max-width: 1110.39px;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        @include xmd {
+          padding: 20px;
+        }
+        @include sm {
+          padding: 10px;
+        }
+        .slider-iamges {
+          max-width: 1028.26px;
+          margin-bottom: -80px;
+          position: relative;
+          overflow: hidden;
+          &::before {
+            content: "";
+            position: absolute;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0.54) 100%
+            );
+            border-radius: 20px;
+            transform: matrix(1, 0.01, -0.01, 1, 0, 0);
+            max-width: 1028.26px;
+            width: 100%;
+            z-index: 1;
+            height: 100%;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: -20%;
+            opacity: 0.5;
+            border: 0.8px solid $white;
+            border-radius: 50%;
+            width: 335px;
+            height: 330.77px;
+            z-index: 2;
+            animation: circle 5s linear infinite;
+            @include xl {
+              width: 100px;
+              height: 100px;
+              top: 0;
+              right: 0;
+            }
+            @keyframes circle {
+              0% {
+                transform: skewY(0deg);
+              }
+              50% {
+                transform: skewY(40deg);
+              }
+              75% {
+                transform: skewX(0deg);
+              }
+              75% {
+                transform: skewX(10deg);
+              }
+            }
+          }
+          @include xmd {
+            margin-bottom: -50px;
+          }
+          @include sm {
+            margin-bottom: -30px;
+          }
+          .Winner-content {
+            position: absolute;
+            bottom: 43.02px;
+            left: 41.31px;
+            z-index: 1;
+            @include xmd {
+              bottom: 20.02px;
+              left: 20.31px;
+            }
+            @include sm {
+              bottom: 10.02px;
+              left: 10.31px;
+            }
+            .content-wrapper {
+              display: flex;
+              justify-content: space-between;
+              .content-left {
+                .heading-three {
+                  margin-bottom: 8px;
+                  @include xmd {
+                    margin-bottom: 2px;
+                  }
+                }
+                .sub-content {
+                  display: flex;
+                  align-items: center;
+                  gap: 9.98px;
+                  @include xmd {
+                    gap: 4px;
+                  }
+                  .account {
+                    max-width: 40px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    border: none;
+                    @include sm {
+                      max-width: 20px;
+                    }
+                    svg {
+                      display: block;
+                      width: 100%;
+                      height: 100%;
+                      overflow: hidden;
+                    }
+                  }
+                  .account-details {
+                    .account-name {
+                      @include account_text;
+                      margin-bottom: 2px;
+                    }
+                    .account-location {
+                      display: flex;
+                      align-items: center;
+                      gap: 5px;
+                      .location-img {
+                        display: block;
+                        max-width: 10px;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        svg {
+                          width: 100%;
+                          height: 100%;
+                          overflow: hidden;
+                          object-fit: cover;
+                        }
+                      }
+                      .location {
+                        @include location;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .winner-end {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 50px;
+      margin-right: 80px;
+      @include sm {
+        margin-right: 0;
+      }
+      .lineimage {
+        .greenline {
+          stroke-dasharray: 2300;
+          stroke-dashoffset: 2300;
+          animation: dash 5s infinite;
+          @keyframes dash {
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+        }
+      }
+      .linetext {
+        .line_texts {
+          @include blue_text;
+          margin-top: 100px;
+        }
+      }
+    }
+  }
+}
