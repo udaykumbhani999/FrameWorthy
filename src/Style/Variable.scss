@@ -1,0 +1,93 @@
+$Poppins-600 : 'Poppins-SemiBold';
+$Bern-500 : 'BernhardGothicURW-Medium';
+$Bern-800 : 'BernhardGothicURW-Heavy';
+$Caveat-700 : 'Caveat-Bold';
+
+
+$primery-color : #8AC926;
+$secondary-color : #212121;
+$white : #ffffff;
+$black :#000000;
+$btn-hover : #3D7CC9;
+$img-bg : #F1EBDD;
+$dark-text : #C8C8C8;
+$dark-grey :#555555;
+$gift-bg : #EFF6FF;
+$border : #CCCCCC;
+
+@mixin heading_text {
+    font-family: $Bern-500;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: $btn-hover;
+    @include md{
+        font-size: 16px;
+        line-height: 22px;
+      }
+}
+
+@mixin p_text {
+    font-family: $Bern-500;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    @include md{
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+@mixin blue_text {
+    font-family: $Caveat-700;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: $btn-hover;
+    @include md{
+        font-size: 24px;
+        line-height: 30px;
+    }
+    @include sm{
+        font-size: 20px;
+        line-height: 26px;
+    }
+}
+
+@mixin account_text {
+    font-family: $Bern-800;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    color: $white;
+    @include sm{
+        font-size: 14px;
+        line-height: 19px;
+    }
+}
+
+@mixin location {
+    font-family: $Bern-500;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $dark-text;
+    @include sm{
+        font-size: 14px;
+        line-height: 19px;
+    }
+}
+
+
+
+
+
+$breakpoints:( 'xsm':480px, 'sm': 576px, 'md': 768px,'xmd': 992px, 'lg': 1024px, 'xml': 1199px, 'xl': 1280px, 'xxl': 1439px);
+    @mixin xsm{@media (max-width: map-get($breakpoints, 'xsm')) {@content;}}
+    @mixin sm{@media (max-width: map-get($breakpoints, 'sm')) {@content;}}
+    @mixin md {@media (max-width: map-get($breakpoints, 'md')) {@content;}}
+    @mixin xmd {@media (max-width: map-get($breakpoints, 'xmd')) {@content;}}
+    @mixin lg {@media (max-width: map-get($breakpoints, 'lg')) {@content;}}
+    @mixin xml {@media (max-width: map-get($breakpoints, 'xml')) {@content;}}
+    @mixin xl {@media (max-width: map-get($breakpoints, 'xl')) {@content;}}
+    @mixin xxl {@media (max-width: map-get($breakpoints, 'xxl')) {@content;}}

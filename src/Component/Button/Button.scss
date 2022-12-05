@@ -1,0 +1,36 @@
+@import "../../Style/Style.scss";
+
+.submit-btn{
+    display: inline-flex;
+    border: none;
+    background-color: $primery-color;
+    padding: 17px 20px 11px 20px;
+    color: $white;
+    font-family: $Bern-500;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.4s;
+    @include md{
+        font-size: 16px;
+        line-height: 16px;
+        padding: 10px 15px 10px 15px;
+    }
+    .btndata{
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap;
+        max-width: 200px;
+    }
+    &:hover{
+        background-color: $btn-hover ;
+    }  
+    svg{
+        margin-left: 13px;
+        margin-bottom: -2px;
+        @include md{
+            margin-left: 5px;
+        }
+    }
+}

@@ -1,0 +1,506 @@
+@import "../../Style/Style.scss";
+
+.prizespart {
+  margin-bottom: 100.71px;
+  position: relative;
+  @include md{
+  margin-bottom: 50px;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    background: url(../../Assets/Images/Prizeelipse.png) no-repeat;
+    height: 278px;
+    width: 281px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    background: url(../../Assets/Images/Prizeflowerbg.svg) no-repeat left bottom;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  
+  .prizes-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 29px 69px 39px 66px;
+    gap: 50px;
+    position: relative;
+    @include xml{
+    padding: 29px 15px 39px 15px;
+    }
+    @include lg{
+      flex-direction: column;
+      padding: 15px;
+      align-items: flex-start;
+    }
+    @include md{
+      padding: 15px;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      background: url(../../Assets/Images/Heartprize.svg) no-repeat;
+      height: 33px;
+      width: 53px;
+      right: 0;
+      bottom: 29px;
+      opacity: 0.2;
+    }
+    .lineshape{
+      position: absolute;
+      top: -100px;
+      right: 0; 
+      z-index: 2;
+      @include lg{
+        top: -50px;
+      }
+      .line-img{  
+        .greenline{
+          stroke-dasharray: 2300;
+          stroke-dashoffset: 2300;
+          animation: dash 5s infinite reverse;
+          @keyframes dash {
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+        }
+      }
+      .linetext{
+        .line_texts{
+            @include blue_text;
+        }
+    }
+    }
+    .lineshapeaerrow{
+      position: absolute;
+      bottom: -50px;
+      right: 25%; 
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      @include lg{
+        bottom: -50px;
+      }
+      @include md{
+        bottom: -80px;
+      }
+      .line-img{
+        .green-line{
+          stroke-dasharray: 2300;
+          stroke-dashoffset: 2300;
+          animation: lines 5s infinite alternate-reverse;
+          @keyframes lines {
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+        }
+      }
+      .linetext{
+        .line_texts{
+            @include blue_text;
+        }
+    }
+    }
+  }
+  .white-bg{
+    position: absolute;
+    background-color: $white;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    right: 0;
+    
+    &::before{
+      content: '';
+      position: absolute;
+      background: url(../../Assets/Images/Sun.svg) no-repeat;
+     top: 29px;
+     left: 37px;
+      height: 65px;
+      width: 63px;
+      opacity: 0.2;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      background: url(../../Assets/Images/Prizeair.svg) no-repeat;
+      height: 58px;
+      width: 60px;
+      right: 195px;
+      bottom: 39px;
+      animation: airplane 5s infinite;
+      @include sm{
+        right: 50px;
+        bottom: 0;
+        z-index: 5;
+      }
+      @include xsm{
+        display: none;
+      }
+      @keyframes airplane {
+        0% {
+          bottom: 0px;
+        }
+        50% {
+          bottom: 50px;
+        }
+
+        100% {
+          bottom: 0px;
+        }
+      }
+    }
+  }
+  .prizes-left {
+    transform: rotate(-8.13deg);
+    transition:all 2s ease-out 100ms;
+    animation: prizes 2s linear infinite alternate;
+    &:hover {
+      animation-play-state: paused;
+    }
+    // @include lg{
+    //   transform: rotate(0deg);
+    // }
+    @include md{
+      animation: none;
+      transform: rotate(0deg);
+    }
+    @keyframes prizes {
+      0%{
+        transform: rotate(-8.13deg);       
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    
+    .prizes-bg {
+      background-color: $img-bg;
+      border-radius: 20px;
+      border: none;
+      width: 100%;  
+      height: 100%;
+      padding: 20px;
+      position: relative;
+      @include sm{
+        padding: 10px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url(../../Assets/Images/Bgshape.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: -10px;
+        background-position-y: -70px;
+        height: 151.64px;
+        width: 100%;
+        z-index: 1;
+        animation: shapeanimate 5s infinite;
+        @include lg{
+         display: none;
+        }
+        @keyframes shapeanimate {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        background: url(../../Assets/Images/Prizesflower.svg) no-repeat contain;
+        bottom: -32px;
+        right: -10px;
+        transform: rotate(8.91deg);
+        height: 108px;
+        width: 151px;
+        z-index: 1;
+        animation: flowershape 5s infinite;
+        @include lg{
+          right: 0;
+        }
+        @include sm{
+         display: none;
+        }
+        @keyframes flowershape {
+          0% {
+            transform: translate(0);
+          }
+          50% {
+            transform: skew(-0.06turn, 10deg);
+          }
+          100% {
+            transform: translate(0);
+          }
+        }
+      }
+      .prizes-image {
+        max-width: 431px;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        border: none;
+        overflow: hidden;
+        margin-bottom: -40px;
+        position: relative;
+        @include sm{
+          margin-bottom: -20px;
+        }
+        @include lg{
+          max-width: 100%;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          background: url(../../Assets/Images/Prizefirst.svg) no-repeat;
+          height: 89.14px;
+          width: 77.07px;
+          bottom: -7px;
+          left: 65px;
+          transform-origin: left bottom;
+          animation: gift 5s infinite;
+          @keyframes gift {
+            0% {
+              transform: rotate(0deg);
+            }
+            50% {
+              transform: rotate(-30deg);
+            }
+            100% {
+              transform: rotate(0deg);
+            }
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          background: url(../../Assets/Images/Prizesecond.svg) no-repeat;
+          height: 64.93px;
+          width: 56.14px;
+          left: 16px;
+          bottom: 4px;
+          transform-origin: left bottom;
+          animation: gifts 5s infinite;
+          @keyframes gifts {
+            0% {
+              transform: rotate(0deg);
+            }
+            50% {
+              transform: rotate(-30deg);
+            }
+            100% {
+              transform: rotate(0deg);
+            }
+          }
+        }
+        .Prizesimg {
+          display: block;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          object-fit: cover;
+          @include lg{
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .prizes-right{
+    z-index: 1;
+    @include lg{
+     width: 100%
+     }
+    .P-text{
+       @include heading_text;
+       margin-bottom: 10px;
+       margin-top: 30.82px;
+       @include md{
+        margin-bottom: 10px;
+       margin-top: 10px;
+       }
+    }
+    .prizes-heading{
+        margin-bottom: 20px;
+        .Sketchimg{
+          margin-left: 15px;
+          width: 38px;
+          height: 49px;
+          overflow: hidden;
+          @include sm{
+            width: 30px;
+          height: 30px;
+          }
+          img{
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            overflow: hidden;
+          }
+        }
+        @include md{
+          margin-bottom: 10px;
+        }
+    }
+    .prizes-selected{
+        @include p_text;
+        margin-bottom: 20px;
+        color: $dark-grey;
+        @include md{
+          margin-bottom: 10px;
+        }
+    }
+    .prizes-card{
+        margin-bottom: 20px;
+        @include md{
+          margin-bottom: 10px;
+        }
+        .card-wrapper{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            @include md{
+             gap: 10px;
+            }
+        }
+        .btn-border{
+            border: 1px dashed $gift-bg;
+            border-radius: 5px;
+            position: relative;
+            &::before{
+              content: '';
+              position: absolute;
+              background-image: url(../../Assets/Images/Cutter.svg);
+              background-repeat: no-repeat;
+              height: 12px;
+              width: 12px;
+              left: -10px;
+              top: -7px;
+            }
+            .gift-btn{
+                background-color: $gift-bg;
+                border: none;
+                border-radius: 8px;
+                @include account_text;
+                color: $btn-hover;
+                padding: 11px 22px 7px 12px;
+                max-width: 96px;
+                text-align: start;
+                margin: 10px;
+                cursor: pointer;
+                @include sm{
+                  padding: 5px;
+                  margin: 5px;
+                }
+            }
+        }
+        .card-text{
+            .card-content{
+                max-width: 223px;
+                .card-black-text{
+                    @include account_text;
+                    line-height: 26px;
+                    color: $dark-grey;
+                    @include sm{
+                      display: block;
+                    }
+                }
+                .card-green-text{
+                    @include account_text;
+                    line-height: 26px;
+                    color: $primery-color;
+                }
+            }
+        }
+    }
+    .offer-text{
+        background-color: $img-bg;
+        border-radius: 20px;
+        border: none;
+        padding: 20px;
+        max-width: 543px;
+        margin-bottom: 15.18px;
+        @include lg{
+          max-width: 100%
+          }
+          @include md{
+            margin-bottom: 10px;
+          }
+          @include sm{
+            padding: 15px;
+          }
+        .offer-para{
+            .Bernhard-text{
+                @include location;
+                line-height: 24px;
+                color: $dark-grey;
+                break-inside: auto;
+                .break{
+                  @include sm{
+                    display: none;
+                  }
+                }
+            }
+            .Caveat-text{
+                font-family: $Caveat-700;
+                font-size: 23px;
+                line-height: 24px;
+                color: $primery-color;
+                @include sm{
+                  font-size: 16px;
+                line-height: 22px;
+                }
+            }
+            .poppins-text{
+                font-family: $Poppins-600;
+                font-size: 16px;
+                line-height: 24px;
+                color: $black;
+                text-decoration: underline;
+                @include sm{
+                  font-size: 14px;
+                line-height: 20px;
+                }
+            }
+        }
+    }
+    .print-text{
+        @include p_text;
+        font-size: 12px;
+        line-height: 18px;
+        color: $dark-grey;
+        margin-bottom: 30px;
+        @include md{
+          margin-bottom: 10px;
+        }
+        .greenstar{
+            color: $primery-color;
+        }
+    }
+    .prizes-btn{
+        margin-bottom: 48px;
+        @include md{
+          margin-bottom: 10px;
+        }
+    }
+  }
+}

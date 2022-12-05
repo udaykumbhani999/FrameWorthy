@@ -1,0 +1,38 @@
+@import "../../Style/Style.scss";
+
+
+.content{
+    .lifeheading{
+        margin-bottom: 10px;
+        @include sm{
+            margin-bottom: 5px;
+        }
+    }
+    .lifepara_first{
+        @include p_text;
+        font-size: 18px;
+        max-width: 580px;
+        margin-bottom: 15px;
+        color: $dark-grey;
+        @include lg{
+            max-width: 100%;
+        }
+        @include md{
+            margin-bottom: 10px;
+        }
+    }
+    .lifepara_second{
+        @include p_text;
+        font-size: 18px;
+        max-width: 580px;
+        margin-bottom: 20px;
+        color: $dark-grey;
+        @include lg{
+            max-width: 100%;
+        }
+        @include md{
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+}

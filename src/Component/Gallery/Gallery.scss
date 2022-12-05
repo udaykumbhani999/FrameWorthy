@@ -1,0 +1,141 @@
+@import "../../Style/Style.scss";
+
+.GalleryPart {
+  padding-bottom: 100px;
+  position: relative;
+  @include lg {
+    padding-bottom: 50px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(../../Assets/Images/Lifeflowerbg.svg) no-repeat center right;
+    height: 100%;
+    width: 100%;
+  }
+
+  .gallery-wrapper {
+    display: flex;
+    gap: 40px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background: url(../../Assets/Images/Coffeecup.svg) no-repeat;
+      height: 107px;
+      width: 97px;
+      right: 50px;
+      top: -50px;
+      z-index: 3;
+      animation: cup 8s ease infinite;
+      @include lg {
+        right: 0;
+      }
+      @keyframes cup {
+        0% {
+          top: 0px;
+        }
+        50% {
+          top: -100px;
+          transform: rotate(-20deg);
+        }
+        75% {
+          top: -100px;
+          transform: rotate(0deg);
+        }
+
+        100% {
+          top: 0px;
+        }
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background: url(../../Assets/Images/Lifebgline.svg) no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      @include lg {
+        display: none;
+      }
+    }
+    @include lg {
+      flex-direction: column;
+      gap: 70px;
+    }
+    @include sm {
+      gap: 50px;
+    }
+  }
+  .gallery-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include lg {
+      gap: 50px;
+    }
+    @include md {
+      gap: 25px;
+    }
+    .moments-img {
+      padding-bottom: 40px;
+      @include sm {
+        padding-bottom: 20px;
+      }
+    }
+  }
+  .gallery-right {
+    display: flex;
+    flex-direction: column;
+    gap: 122px;
+    @include lg {
+      flex-direction: column-reverse;
+      gap: 50px;
+    }
+    @include md {
+      gap: 25px;
+    }
+  }
+  .momentsright-img {
+    padding-bottom: 40px;
+    @include sm {
+      padding-bottom: 20px;
+    }
+  }
+
+  .lifeline {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -75px;
+    z-index: -1;
+    @include md {
+      margin-top: 0;
+    }
+    .lineimage {
+      .greenline {
+        stroke-dasharray: 1000;
+        // stroke-width: 3px;
+        stroke-dashoffset: 1000;
+        animation: lineband 5s infinite forwards;
+        @keyframes lineband {
+          to {
+            stroke-dashoffset: 0;
+            // stroke-dasharray: 0;
+          }
+          // from{
+          //   stroke-dashoffset: 0;
+          //   stroke-dasharray: 0;
+          // }
+        }
+      }
+    }
+    .linetext {
+      .line_texts {
+        @include blue_text;
+      }
+    }
+  }
+}

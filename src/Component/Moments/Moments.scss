@@ -1,0 +1,171 @@
+@import "../../Style/Style.scss";
+
+.life-leftpart {
+  .lifebg {
+    background-color: $img-bg;
+    border-radius: 20px;
+    border: none;
+    max-width: 580px;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    position: relative;
+    @include sm {
+      padding: 20px;
+    }
+    .life_flower{
+      position: absolute;
+      top: -60px;
+      left: 0;
+      z-index: 2;
+      @include xsm{
+        display: none;
+      }
+    }
+    .lifeflower2{
+     right: 0;
+     left: unset;
+     top: -15px;
+    }
+
+    .lifeimg {
+      max-width: 500px;
+      width: 100%;
+      height: 100%;
+      margin-bottom: -80px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      border: none;
+      @include lg{
+        max-width: 100%;
+    }
+      @include sm {
+        margin-bottom: -40px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.54) 116.06%,
+          rgba(0, 0, 0, 0.24) 116.08%,
+          rgba(0, 0, 0, 0.54) 116.09%
+        );
+        border-radius: 20px;
+        max-width: 500px;
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+        @include lg{
+            max-width: 100%;
+        }
+      }
+      img {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .lifecontents {
+      position: relative;
+      .lifecontent {
+        position: absolute;
+        bottom: 25px;
+        left: 25px;
+        right: 25px;
+        z-index: 1;
+        @include sm {
+          bottom: 10px;
+          left: 10px;
+          right: 10px;
+        }
+        .lifewrapper {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+      .content-left {
+        .headingthree {
+          margin-bottom: 5px;
+        }
+        .account-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .ac-img {
+            overflow: hidden;
+            max-width: 40px;
+            height: 100%;
+            width: 100%;
+            &svg {
+              display: block;
+              overflow: hidden;
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .ac-right {
+            .p-text {
+              margin-bottom: 2px;
+              @include account_text;
+            }
+            .p-location {
+              @include location;
+            }
+          }
+        }
+      }
+      .content-right {
+        .vote-btn {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border: 1px solid $white;
+          padding: 15px 15px;
+          margin-top: 30px;
+          border-radius: 10px;
+          background: transparent;
+          cursor: pointer;
+          transition: all 0.4s;
+          &:hover{
+            background-color: $btn-hover;
+            border-color: $btn-hover;
+          }
+          @include sm {
+            padding: 7px;
+            margin-top: 30px;
+          }
+          .heart-icon {
+            max-width: 16px;
+            width: 100%;
+            height: 15px;
+            overflow: hidden;
+            &svg {
+              display: block;
+              width: 16px;
+              height: 16px;
+              overflow: hidden;
+              object-fit: cover;
+            }
+          }
+          .heart-text {
+            font-family: $Bern-800;
+            font-size: 16px;
+            line-height: 16px;
+            color: $white;
+            @include sm {
+              font-size: 14px;
+              line-height: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
